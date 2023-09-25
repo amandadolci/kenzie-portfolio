@@ -25,97 +25,89 @@ export const Contacts = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [0.1, 0.9]);
 
   return (
-    <ContactSection id="contact">
-      <Container>
-        <ContactSectionContent ref={ref}>
-          <motion.div style={{ scale }}>
-            <ContactSectionText>
-              <Text type="heading2" color="grey4">
-                Let's talk and{" "}
-                <Text as="span" type="heading2" color="brand1">
-                  develop solutions for your company
-                </Text>
-                , together!
-              </Text>
-            </ContactSectionText>
-          </motion.div>
-          <ContactsCards>
-            <ContactCard>
-              <ContactCardImage className="wpp">
-                <FaWhatsapp color="#fff" size={24} />
-              </ContactCardImage>
-              <ContactCardContent>
-                <Text type="heading4" color="grey4">
-                  My Whatsapp
-                </Text>
-                <Text color="grey2" type="body2">
-                  I'm available for a voice chat, let's about creativity
-                  together?
-                </Text>
-                <Text
-                  as="a"
-                  color="grey2"
-                  type="body2"
-                  target="_blank"
-                  href={`https://api.whatsapp.com/send?phone=+55+${userData.whatsappNumber}&text=Ol%C3%A1%2C%20venho%20por%20meio%20do%20seu%20portf%C3%B3lio%20na%20internet%2C%20gostaria%20de%20conhecer%20melhor%20seus%20servi%C3%A7os`}
-                >
-                  Talk Now
-                </Text>
-              </ContactCardContent>
-            </ContactCard>
+		<ContactSection id='contact'>
+			<Container>
+				<ContactSectionContent ref={ref}>
+					<motion.div style={{ scale }}>
+						<ContactSectionText>
+							<Text type='heading2' color='grey4'>
+								I'm eager to start my career as a full stack web developer{' '}
+								<Text as='span' type='heading2' color='brand1'>
+									and further improve the knowledge I've acquired.{' '}
+								</Text>
+								I'm looking for entry-level positions{' '}
+								<Text as='span' type='heading2' color='brand1'>
+									where I can contribute to a team and learn from experienced developers.
+								</Text>
+							</Text>
+						</ContactSectionText>
+					</motion.div>
+					<ContactsCards>
+						<ContactCard>
+							<ContactCardImage className='wpp'>
+								<FaWhatsapp color='#fff' size={24} />
+							</ContactCardImage>
+							<ContactCardContent>
+								<Text type='heading4' color='grey4'>
+									WhatsApp
+								</Text>
+								{/* <Text color='grey2' type='body2'>
+									I'm available for a voice chat, let's about creativity together?
+								</Text> */}
+								<Text
+									as='a'
+									color='grey2'
+									type='body2'
+									target='_blank'
+									// href={`https://api.whatsapp.com/send?phone=+55+${userData.whatsappNumber}&text=Ol%C3%A1%2C%20venho%20por%20meio%20do%20seu%20portf%C3%B3lio%20na%20internet%2C%20gostaria%20de%20conhecer%20melhor%20seus%20servi%C3%A7os`}>
+									href={`https://wa.me/${userData.whatsappNumber}`}>
+									Send me a message!
+								</Text>
+							</ContactCardContent>
+						</ContactCard>
 
-            <ContactCard>
-              <ContactCardImage className="email">
-                <FaEnvelopeOpen color="#fff" size={24} />
-              </ContactCardImage>
-              <ContactCardContent>
-                <Text type="heading4" color="grey4">
-                  My email
-                </Text>
-                <Text color="grey2" type="body2">
-                  Send me an email reporting feedbacks, suggestions and ideas
-                </Text>
+						<ContactCard>
+							<ContactCardImage className='email'>
+								<FaEnvelopeOpen color='#fff' size={24} />
+							</ContactCardImage>
+							<ContactCardContent>
+								<Text type='heading4' color='grey4'>
+									Email
+								</Text>
+								{/* <Text color='grey2' type='body2'>
+									Send me an email reporting feedbacks, suggestions and ideas
+								</Text> */}
 
-                <Text
-                  as="a"
-                  color="grey2"
-                  type="body2"
-                  target="_blank"
-                  href={`mailto=${userData.emailUser}`}
-                  onClick={() =>
-                    (window.location.href = "mailto:nekelpatrick.com")
-                  }
-                >
-                  Send me an email
-                </Text>
-              </ContactCardContent>
-            </ContactCard>
-            <ContactCard>
-              <ContactCardImage className="linkedin">
-                <FaLinkedin color="#fff" size={24} />
-              </ContactCardImage>
-              <ContactCardContent>
-                <Text type="heading4" color="grey4">
-                  My LinkedIn
-                </Text>
-                <Text color="grey2" type="body2">
-                  We can create more constant interactions as well as a sharing
-                  network
-                </Text>
-                <Text
-                  as="a"
-                  color="grey2"
-                  type="body2"
-                  target="_blank"
-                  href={linkedInUrl}
-                >
-                  Go to LinkedIn now
-                </Text>
-              </ContactCardContent>
-            </ContactCard>
-          </ContactsCards>
-        </ContactSectionContent>
-      </Container>
-    </ContactSection>
-  );
+								<Text
+									as='a'
+									color='grey2'
+									type='body2'
+									target='_blank'
+									href={`mailto:${userData.emailUser}`}
+									onClick={() => window.location.href}>
+									Send me an email!
+								</Text>
+							</ContactCardContent>
+						</ContactCard>
+						<ContactCard>
+							<ContactCardImage className='linkedin'>
+								<FaLinkedin color='#fff' size={24} />
+							</ContactCardImage>
+							<ContactCardContent>
+								<Text type='heading4' color='grey4'>
+									LinkedIn
+								</Text>
+								{/* <Text color='grey2' type='body2'>
+									We can create more constant interactions as well as a sharing network
+								</Text> */}
+								<Text as='a' color='grey2' type='body2' target='_blank' href={linkedInUrl}>
+									Go to my LinkedIn page
+								</Text>
+							</ContactCardContent>
+						</ContactCard>
+					</ContactsCards>
+				</ContactSectionContent>
+			</Container>
+		</ContactSection>
+	);
 };
